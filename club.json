@@ -1,0 +1,71 @@
+{
+  "newUser": [
+    {
+      "name": "meet",
+      "email": "abc@gmail.com",
+      "password": "123",
+      "id": "1"
+    },
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "password": "123",
+      "id": "2"
+    }
+  ],
+  "product": [
+    {
+      "id": "1",
+      "productName": "xyz",
+      "productDescription": "Highly proficient in Web3 and AI and professional in Designing Websites with tools of Web3.0.",
+      "productString": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
+      "productPrice": 110,
+      "productQuantity": 0,
+      "favProduct": false
+    },
+    {
+      "id": "2",
+      "productName": "qrt",
+      "productDescription": "A professional web designer with a wealth of knowledge about the web Development and software",
+      "productString": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
+      "productPrice": 120,
+      "productQuantity": 0,
+      "favProduct": false
+    },
+    {
+      "id": "3",
+      "productName": "abc",
+      "productDescription": "Expert in all aspects of coding and knowledgeable about a wide range of coding languages",
+      "productString": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
+      "productPrice": 140,
+      "productQuantity": 0,
+      "favProduct": false
+    },
+    {
+      "id": "4",
+      "productName": "MMM",
+      "productDescription": "Expert in all aspects of coding and knowledgeable about a wide range of coding languages",
+      "productString": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
+      "productPrice": 160,
+      "productQuantity": 0,
+      "favProduct": false
+    },
+    {
+      "id": "f20c",
+      "name": "mnv",
+      "des": "heloedshvfedvfdvn",
+      "url": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
+      "price": 200,
+      "quantity": 0,
+      "frv": true
+    }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "name": "pqr",
+      "email": "pqr@gmail.com",
+      "password": "123"
+    }
+  ]
+}

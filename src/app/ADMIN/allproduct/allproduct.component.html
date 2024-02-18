@@ -1,0 +1,22 @@
+<div>
+    <button class="btn btn-outline-primary" routerLink="../addproduct">Add Product</button>
+</div>
+
+<p style="text-align: end;" >Total Course Are : {{productDetail.length}}</p>   
+
+<section class="container text-center">
+    <div class="row align-items-start">
+        <div class="col d-block"  *ngFor="let product of productDetail" >
+                <div>
+                    <img alt="" class="resize-image" id="image2" src={{product.productString}} height="300px" width="300px">
+                    <p>{{product.productName}}</p>
+                    <p class="Prices p-md-2">{{product.productPrice}}</p>
+                    <p>{{product.productDescription}}</p>
+                    <button class="btn btn-outline-primary" (click)="deleteProduct(product)"> deleteProduct</button>
+                    <button class="btn btn-outline-warning"> Details </button>
+                </div>
+         </div>
+    </div>
+    </section>
+
+   

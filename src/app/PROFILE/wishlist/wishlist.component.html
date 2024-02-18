@@ -1,0 +1,22 @@
+<section class="container text-center">
+    <div class="row align-items-start">
+        <!-- <p>Total Course Are : {{productList.length}}</p>     -->
+        <div *ngIf="isActive">
+            <div class="alert alert-info">
+              <h1>No products available !</h1>
+            </div>
+          </div>
+        
+        <div class="col d-block"  *ngFor="let product of productList" >
+                <div>
+                    <img alt="" class="resize-image" id="image2" src={{product.productString}} height="300px" width="300px">
+                    <p>{{product.productName}}</p>
+                    <p class="Prices p-md-2">{{product.productPrice}}</p>
+                    <p>{{product.productDescription}}</p>
+                    <button class="bi bi-trash btn btn-outline-primary" style="margin: 5px;" (click)="favorite(product)"></button>
+                    <!-- <button [ngClass]="{'bi bi-heart':!product.favProduct,'bi bi-heart-fill':product.favProduct}" (click)="favorite(product)" ></button> -->
+                    <button class="btn btn-outline-warning"> Details </button>
+                </div>
+         </div>
+    </div>
+    </section>

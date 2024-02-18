@@ -1,0 +1,53 @@
+<section class="container">
+    <header>ADD PRODUCT</header>
+  
+    <form class="form">
+      <div class="column">
+        <div class="input-box">
+            <!-- <h1 style="text-align: end;">Welcome{{"," + name}}</h1> -->
+        <input type="text" placeholder="Product Name" name="productName" [(ngModel)]="productName"/>
+        </div>
+      </div>    
+  
+      <div class="input-box">
+        <input type="text" placeholder="Product Description" name="productDescription" [(ngModel)]="productDescription" />
+      </div>
+
+      <div class="column">
+        <div class="input-box">
+            <!-- <h1 style="text-align: end;">Welcome{{"," + name}}</h1> -->
+        <input type="number" placeholder="Product Quantity" name="productQuantity" [(ngModel)]="productQuantity"/>
+        </div>
+      </div>    
+  
+      <div class="input-box">
+        <input type="number" placeholder="Product Price" name="Price" [(ngModel)]="price" />
+      </div>
+      <input type="submit" value="Submit" class="submit-btn" (click)="addproductFunctions()"> 
+    </form>
+  </section>
+  
+  <!--uncomment below HTML for displaying form data-->
+  
+  <!-- <section class="user-detail-container">
+    <div class="user-details-container">
+      <div class="user-avatar">
+        <p>JS</p>
+      </div>
+      <div class="user-details">
+        <div class="user-name">
+          <h2>John Smith</h2>
+        </div>
+        <p><b>Email:</b> johnsmith@gmail.com</p>
+        <p><b>Username:</b> johnsmith86 </p>
+        <p><b>Date of birth:</b> July 21, 1989</p>
+        <div class="user-name">
+          <h3>Address</h3>
+        </div>
+        <span>India</span>.
+        <span> New Delhi</span>.
+        <span> NCR</span>.
+        <span> 234565</span>
+      </div>
+    </div>
+  </section> -->
