@@ -28,6 +28,19 @@ export class AllproductComponent implements OnInit {
 
 
   deleteProduct(data:ProductModel){
+    this.products.deleteProduct(data).subscribe();
+    this.ngOnInit();
   }
+
+  editProduct(data:ProductModel){
+    this.router.navigate(['admin/editProduct'], {queryParams:{id : data.id}})
+      
+  }
+
+  detailOfProduct(data:ProductModel){
+      this.router.navigate(['admin/product-Details'],{queryParams:{id:data.id}})
+  }
+
+
 
 }

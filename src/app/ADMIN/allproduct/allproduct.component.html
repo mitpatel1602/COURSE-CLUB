@@ -8,12 +8,13 @@
     <div class="row align-items-start">
         <div class="col d-block"  *ngFor="let product of productDetail" >
                 <div>
-                    <img alt="" class="resize-image" id="image2" src={{product.productString}} height="300px" width="300px">
+                    <img alt="" class="resize-image" id="image2" src='{{product.productString}}' height="300px" width="300px">
                     <p>{{product.productName}}</p>
                     <p class="Prices p-md-2">{{product.productPrice}}</p>
                     <p>{{product.productDescription}}</p>
                     <button class="btn btn-outline-primary" (click)="deleteProduct(product)"> deleteProduct</button>
-                    <button class="btn btn-outline-warning"> Details </button>
+                    <button style="margin-left: 5px;" class="btn btn-outline-warning" (click)="editProduct(product)"> Edit Product </button>
+                    <!-- <button style="margin-left: 5px;"  class="btn btn-outline-primary" (click)="detailOfProduct(product)"> Details </button> -->
                 </div>
          </div>
     </div>

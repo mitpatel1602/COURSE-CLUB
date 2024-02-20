@@ -1,5 +1,5 @@
 export class ProductModel{
-    productId:number | null = null;
+    id:number | null = null;
     productName:string | null = null
     productPrice:number | null = null;
     basePrice?:number|null = null;

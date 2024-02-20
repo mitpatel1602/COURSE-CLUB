@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { DashboradComponent } from './../../ADMIN/dashborad/dashborad.component';
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from 'src/app/MODEL/Product.model';
 import { userModel } from 'src/app/MODEL/user.model';
@@ -16,7 +18,7 @@ export class ShopComponent implements OnInit {
   total : number = 0;
   
   
-  constructor(private allProduct:ProductService , private cartServices:CartService ){}
+  constructor(private allProduct:ProductService , private cartServices:CartService , private router : Router){}
 
   productList:ProductModel[] = [];
 
@@ -25,7 +27,6 @@ export class ShopComponent implements OnInit {
 
     //  this.getProductService()
       this.getproductdata()
-    
   }
 
 
@@ -38,10 +39,12 @@ export class ShopComponent implements OnInit {
   getproductdata(){
     this.allProduct.getdatasevice().subscribe(e=>{
       this.productList = e;      
+      // console.log(this.productList);
+      
     })
   }
   addToCartProduct(data:ProductModel){
-    this.cartServices.AddProductToCart(data)
+   
   }
   favorite(data:ProductModel){
       this.allProduct.fProduct(data)
@@ -53,5 +56,8 @@ export class ShopComponent implements OnInit {
   searchValueChange(event:EvalError | Event | any){
     let selectedValue = event.target.value;
     this.productList =  this.allProduct.filterByCompanyName(selectedValue);
+  }
+  viewProduct(data:ProductModel){
+      this.router.navigate(['nav/viewproduct'],{queryParams:{id:data.id}})
   }
 }

@@ -25,13 +25,11 @@ export class CartComponent implements OnInit{
       this.isAllow = true;
     }
   }
-  increaseQuantity(data:ProductModel){
+  increaseQuantity(data:ProductModel ){
     this.cartService.increaseQuantity(data)
   }
 
   ngOnChange(){
-    console.log('hello');
-    
     this.calculatePrice()
   }
 

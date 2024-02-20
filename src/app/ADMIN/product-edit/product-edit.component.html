@@ -1,0 +1,22 @@
+<section class="container">
+    <header>EDIT PRODUCT</header>
+  
+    <form class="form">
+      <div class="column">
+        <div class="input-box">
+            <!-- <h1 style="text-align: end;">Welcome{{"," + name}}</h1> -->
+        <input type="text" placeholder="Product Name" name="productName" [(ngModel)]="productName"/>
+        </div>
+      </div>    
+  
+      <div class="input-box">
+        <input type="text" placeholder="Product Description" name="productDescription" [(ngModel)]="productDescription" />
+      </div>  
+  
+      <div class="input-box">
+        <input type="number" placeholder="Product Price" name="price" [(ngModel)]="price" />
+      </div>
+      <input type="submit" value="Submit" class="submit-btn" (click)="editProductDetail()"> 
+    </form>
+  </section>
+  

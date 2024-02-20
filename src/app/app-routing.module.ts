@@ -1,3 +1,5 @@
+
+import { OrderComponent } from './ADMIN/order/order.component';
 import { EditProfileComponent } from './PROFILE/edit-profile/edit-profile.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,10 +13,13 @@ import { ProfileComponent } from './PROFILE/profile/profile.component';
 import { CartComponent } from './CART/cart/cart.component';
 import { ShopComponent } from './SHOP/shop/shop.component';
 import { WishlistComponent } from './PROFILE/wishlist/wishlist.component';
-import { OrderComponent } from './PROFILE/order/order.component';
 import { DashboradComponent } from './ADMIN/dashborad/dashborad.component';
 import { AllproductComponent } from './ADMIN/allproduct/allproduct.component';
 import { AddproductComponent } from './ADMIN/addproduct/addproduct.component';
+import { EditAdminComponent } from './ADMIN/edit-admin/edit-admin.component';
+import { ProductEditComponent } from './ADMIN/product-edit/product-edit.component';
+import { ViewproductComponent } from './SHOP/viewproduct/viewproduct.component';
+
 
 const routes: Routes = [
   {path:'',component:RegisterComponent},
@@ -31,12 +36,16 @@ const routes: Routes = [
     ]
     },
     {path:'cart',component:CartComponent},
-    {path:'shop',component:ShopComponent}
+    {path:'shop',component:ShopComponent},
+    {path:'viewproduct',component:ViewproductComponent}
   ]},
   {path:'admin',component:DashboradComponent,
   children:[
     {path:'allproduct' , component:AllproductComponent},
-    {path:'addproduct',component:AddproductComponent}
+    {path:'addproduct',component:AddproductComponent},
+    {path:'total order',component:OrderComponent},
+    {path:'editAdminProfile',component:EditAdminComponent},
+    {path:'editProduct',component:ProductEditComponent},
   ]
   },
   {path:'**',component:PageNotFoundComponent}

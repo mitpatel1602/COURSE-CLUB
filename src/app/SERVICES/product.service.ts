@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductModel } from '../MODEL/Product.model';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -21,16 +20,15 @@ export class ProductService {
 
       allProduct:ProductModel[] = [
           {
-              productId:this.idValue++,
+              id:this.idValue++,
               productName:'xyz',
               productDescription:'Highly proficient in Web3 and AI and professional in Designing Websites with tools of Web3.0.',
               productString: this.productImg,
               productPrice:120,
               productQuantity:0
           },
-
           {
-              productId:this.idValue++,
+              id:this.idValue++,
               productName:'qrt',
               productDescription:'A professional web designer with a wealth of knowledge about the web Development and software',
               productString:this.productImg,
@@ -38,7 +36,7 @@ export class ProductService {
               productQuantity:0
           },
           {
-              productId:this.idValue++,
+              id:this.idValue++,
               productName:'abc',
               productDescription:'Expert in all aspects of coding and knowledgeable about a wide range of coding languages',
               productString:this.productImg,
@@ -46,7 +44,7 @@ export class ProductService {
               productQuantity:0
           },
           {
-              productId:this.idValue++,
+              id:this.idValue++,
               productName:'MMM',
               productDescription:'Expert in all aspects of coding and knowledgeable about a wide range of coding languages',
               productString:this.productImg,
@@ -65,15 +63,21 @@ export class ProductService {
       //       })
       // }
 
-      addproduct(name:string , des:string , url:string ,price : number , quantity:number,frv:boolean){
-            return this.http.post<ProductModel[]>('http://localhost:3000/product',{name,des,url,price,quantity,frv})
-            
+      addproduct(productName:string , productDescription:string , productString:string , productPrice:number , productQuantity:number , favProduct:boolean){
+        productString = this.productImg      
+        return this.http.post(this.productUrl,{productName,productDescription,productString,productPrice,productQuantity,favProduct})
+
       }
       getdatasevice(){
         return this.http.get<ProductModel[]>(this.productUrl)
       }
 
-      
+
+      editProductDetail(id:string | number , name:string , des:string , price:number){
+          const id1=`${this.productUrl}/${id}`
+          return this.http.put<ProductModel[]>(id1,{productName:name,productDescription:des,productString:this.productImg,productPrice:price,productQuantity:0,favProduct:false});
+    
+      }
 
       fProduct(data:ProductModel) : boolean{
         if(data.favProduct === true){
@@ -92,6 +96,11 @@ export class ProductService {
           return false
         }
         
+      }
+
+      deleteProduct(data:ProductModel){
+          console.log(data.id);
+          return this.http.delete<ProductModel[]>(this.productUrl + '/' + data.id)
       }
 
       wishListProduct(){
@@ -113,7 +122,5 @@ export class ProductService {
         }
       }
 }
-function axios(arg0: { method: string; url: string; }) {
-  throw new Error('Function not implemented.');
-}
+
 

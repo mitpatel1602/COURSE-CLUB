@@ -1,3 +1,4 @@
+import { NavbarComponent } from './../NAVBAR/navbar/navbar.component';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,6 +13,7 @@ export class AuthService {
   loginUserData:userModel[] = [];
   userData:userModel[] = [];
   url:string='http://localhost:3000/newUser'
+  adminUrl:string = 'http://localhost:3000/admin';
 
   constructor(private http:HttpClient,private router:Router) { }
 
@@ -47,8 +49,14 @@ export class AuthService {
   updateUserInfo(id:number , name:string , email:string , password:string) : Observable<userModel[]>{
     console.log(id);
     const id1=`${this.url}/${id}`
-    
     return this.http.put<userModel[]>(id1,{name:name,email:email,password:password});
+  }
+
+  updateAdminInfo(id:number , name:string , email:string , password:string){
+    console.log(id);
+    const id1=`${this.adminUrl}/${id}`
+    return this.http.put<userModel[]>(id1,{name:name,email:email,password:password});
+    
   }
 
 }

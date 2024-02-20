@@ -22,7 +22,12 @@ import { EditProfileComponent } from './PROFILE/edit-profile/edit-profile.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboradComponent } from './ADMIN/dashborad/dashborad.component';
 import { AllproductComponent } from './ADMIN/allproduct/allproduct.component';
-import { AddproductComponent } from './ADMIN/addproduct/addproduct.component'
+import { AddproductComponent } from './ADMIN/addproduct/addproduct.component';
+import { EditAdminComponent } from './ADMIN/edit-admin/edit-admin.component';
+import { ProductEditComponent } from './ADMIN/product-edit/product-edit.component';
+import { ViewproductComponent } from './SHOP/viewproduct/viewproduct.component';
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +46,10 @@ import { AddproductComponent } from './ADMIN/addproduct/addproduct.component'
     EditProfileComponent,
     DashboradComponent,
     AllproductComponent,
-    AddproductComponent
+    AddproductComponent,
+    EditAdminComponent,
+    ProductEditComponent,
+    ViewproductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,18 @@
 <section class="container">
-    <header>ADD PRODUCT</header>
+    <header>EDIT PROFILE</header>
   
     <form class="form">
       <div class="column">
         <div class="input-box">
             <!-- <h1 style="text-align: end;">Welcome{{"," + name}}</h1> -->
-        <input type="text" placeholder="Product Name" name="productName" [(ngModel)]="productName"/>
+        <input type="text" placeholder="First Name" name="name" [(ngModel)]="name"/>
         </div>
       </div>    
   
       <div class="input-box">
-        <input type="text" placeholder="Product Description" name="productDescription" [(ngModel)]="productDescription" />
-      </div>  
-  
-      <div class="input-box">
-        <input type="number" placeholder="Product Price" name="price" [(ngModel)]="price" />
+        <input type="text" placeholder="Email" name="email" [(ngModel)]="email" />
       </div>
-      <input type="submit" value="Submit" class="submit-btn" (click)="addproductFunctions()"> 
+      <input type="submit" value="Submit" class="submit-btn" (click)="updateProfileFunction()"> 
     </form>
   </section>
   
