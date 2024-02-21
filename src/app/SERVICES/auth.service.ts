@@ -33,6 +33,7 @@ export class AuthService {
         });
     })
   }
+  
   adminLogin(name:string,password:string){ 
     this.http.get<userModel[]>('http://localhost:3000/admin').subscribe(data=>{
         data.forEach(s=>{
@@ -47,7 +48,6 @@ export class AuthService {
     })
   }
   updateUserInfo(id:number , name:string , email:string , password:string) : Observable<userModel[]>{
-    console.log(id);
     const id1=`${this.url}/${id}`
     return this.http.put<userModel[]>(id1,{name:name,email:email,password:password});
   }

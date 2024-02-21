@@ -26,6 +26,9 @@ import { AddproductComponent } from './ADMIN/addproduct/addproduct.component';
 import { EditAdminComponent } from './ADMIN/edit-admin/edit-admin.component';
 import { ProductEditComponent } from './ADMIN/product-edit/product-edit.component';
 import { ViewproductComponent } from './SHOP/viewproduct/viewproduct.component';
+import { CartService } from './SERVICES/cart.service';
+import { AuthService } from './SERVICES/auth.service';
+import { ProductService } from './SERVICES/product.service';
 
 
 
@@ -60,7 +63,10 @@ import { ViewproductComponent } from './SHOP/viewproduct/viewproduct.component';
     ButtonModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CartService,
+              AuthService,
+              ProductService
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

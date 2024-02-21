@@ -37,10 +37,6 @@ export class AllproductComponent implements OnInit {
       
   }
 
-  detailOfProduct(data:ProductModel){
-      this.router.navigate(['admin/product-Details'],{queryParams:{id:data.id}})
-  }
-
 
 
 }

@@ -1,10 +1,12 @@
+
+import { userModel } from './../../MODEL/user.model';
 import { Router } from '@angular/router';
-import { DashboradComponent } from './../../ADMIN/dashborad/dashborad.component';
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from 'src/app/MODEL/Product.model';
-import { userModel } from 'src/app/MODEL/user.model';
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { ProductService } from 'src/app/SERVICES/product.service';
+import { cart } from 'src/app/MODEL/cart.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-shop',
@@ -13,14 +15,16 @@ import { ProductService } from 'src/app/SERVICES/product.service';
 })
 export class ShopComponent implements OnInit {
 
-  addProductToCart:ProductModel[]=[];
   searchProduct:ProductModel[] = [];
-  total : number = 0;
+  users:userModel[] = [];
+  // cartData:cart[] | any= [];
+  isAdded:boolean = true;
   
   
-  constructor(private allProduct:ProductService , private cartServices:CartService , private router : Router){}
+  constructor(private allProduct:ProductService , private cartServices:CartService , private router : Router , private http:HttpClient){}
 
   productList:ProductModel[] = [];
+
 
 
   ngOnInit(): void {
@@ -40,11 +44,15 @@ export class ShopComponent implements OnInit {
     this.allProduct.getdatasevice().subscribe(e=>{
       this.productList = e;      
       // console.log(this.productList);
-      
     })
   }
   addToCartProduct(data:ProductModel){
-   
+   if(!(localStorage.getItem('LoginUser'))){
+         alert('please login ')
+  }else{
+    this.allProduct.addProductToCart(data)
+  }
+
   }
   favorite(data:ProductModel){
       this.allProduct.fProduct(data)

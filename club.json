@@ -4,23 +4,13 @@
       "name": "meet",
       "email": "abc@gmail.com",
       "password": "123",
-      "id": 1,
-      "cart": [
-        {
-          "productId": 1
-        }
-      ]
+      "id": 1
     },
     {
       "name": "abc",
       "email": "abc@gmail.com",
       "password": "123",
-      "id": 2,
-      "cart": [
-        {
-          "productId": 2
-        }
-      ]
+      "id": 2
     }
   ],
   "product": [
@@ -29,7 +19,7 @@
       "productDescription": "Highly proficient in Web3 and AI and professional in Designing Websites with tools of Web3.0.",
       "productString": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
       "productPrice": 240,
-      "productQuantity": 0,
+      "productQuantity": 1,
       "favProduct": false,
       "id": 1
     },
@@ -47,7 +37,7 @@
       "productDescription": "Expert in all aspects of coding and knowledgeable about a wide range of coding languages",
       "productString": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
       "productPrice": 160,
-      "productQuantity": 9,
+      "productQuantity": 1,
       "favProduct": false,
       "id": 3
     },
@@ -77,5 +67,6 @@
       "password": "123",
       "id": 1
     }
-  ]
+  ],
+  "cart": []
 }

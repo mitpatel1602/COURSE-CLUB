@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ProductModel } from '../MODEL/Product.model';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { cart } from '../MODEL/cart.model';
 
 
 @Injectable({
@@ -18,53 +19,40 @@ export class CartService {
   productUrl:string = 'http://localhost:3000/product'
   orderData:ProductModel[] = [];
   totalPrice:number|null = null
-  addToCartProduct:string = 'http://localhost:3000/addTocart'
+  cartUrl:string = "http://localhost:3000/cart"
 
-
-  AddProductToCart(data:ProductModel){
-   
-  }
-
-  AddViewPageProduct(data : ProductModel[]){
-  }
-
-
-  viewCart(){
-    return this.productDetails
-  }
+  // viewCart(){
+  //   return this.productDetails
+  // }
 
    increaseQuantity(data:ProductModel){ 
     data.basePrice = 0;
     data.productQuantity++
     data.basePrice = data.productQuantity * data.productPrice!
+    const id1=`${this.cartUrl}/${data.id}`
+    return this.http.put<ProductModel[] | cart []>(id1,data)
   }
 
-  decreaseQuantity(data:ProductModel) : boolean{
+  decreaseQuantity(data:ProductModel){
     data.basePrice = 0;
     if(data.productQuantity === 1)
     {
         let b = this.productDetails.indexOf(data)
         this.productDetails.splice(b ,1);
+        this.http.delete<cart[]>(this.cartUrl + '/' + data.id).subscribe()
     }
     data.productQuantity--;
     data.basePrice = data.productQuantity * data.productPrice!
-    return true
+    const id1=`${this.cartUrl}/${data.id}`
+    this.http.put<cart []>(id1,data).subscribe()
   }
-
   deleteProductFormCart(data:ProductModel){
     data.productQuantity = 0;
     const findIndex = this.productDetails.indexOf(data)
     this.productDetails.splice(findIndex , 1);
+    return this.http.delete<cart[]>(this.cartUrl + '/' + data.id)
   }
-
-  serviceFor(id1:string | number){
-    this.http.get<ProductModel[]>(this.productUrl).subscribe(data=>{
-      data.forEach(s=>{
-        if(this.id === s.id){
-           console.log(this.id);
-            return
-        }
-      });
-  }) 
+  calculatePrice(){
+   return this.http.get<ProductModel[]>(this.cartUrl)
   }
 }

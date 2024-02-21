@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { count } from 'rxjs';
 import { ProductModel } from 'src/app/MODEL/Product.model';
+import { cart } from 'src/app/MODEL/cart.model';
 import { CartService } from 'src/app/SERVICES/cart.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class ViewproductComponent implements OnInit{
 
   isActive:boolean = true;
   id : number | string = '';
+  productId:number | null = null;
   productName:string|any = null;
   productDescription:string|null = null;
   price:number|null = null;
@@ -24,8 +26,10 @@ export class ViewproductComponent implements OnInit{
   counter:number = 1;
   frvProduct:boolean = false;
   productUrl : string = "http://localhost:3000/product";
-  productImg:string = 'https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=';
+  productImg:string = '';
   productDetails:ProductModel[] = []
+  cartUrl:string = 'http://localhost:3000/cart'
+  data:cart[] | ProductModel[]= [];
 
   constructor(private router:ActivatedRoute , private http:HttpClient , private cartServices:CartService){}
 
@@ -36,8 +40,10 @@ export class ViewproductComponent implements OnInit{
     this.http.get<ProductModel[]>(this.productUrl).subscribe((item)=>{
       item.forEach(d=>{
         if(this.id == d.id){
+          this.productId = d.id;
           this.productName = d.productName,
           this.productDescription = d.productDescription,
+          this.productImg = d.productString!,
           this.price = d.productPrice,
           this.basePrice! = this.price!,
           this.productQuantity = d.productQuantity
@@ -68,7 +74,8 @@ export class ViewproductComponent implements OnInit{
     }
   }
   addToCartProduct(){
-     
+    // let id = this.productId
+    // this.cartServices.addProductFromDetail(id!)
   }
 
 }
