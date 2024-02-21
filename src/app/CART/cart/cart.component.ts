@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from 'src/app/MODEL/Product.model';
@@ -18,7 +19,7 @@ export class CartComponent implements OnInit{
   userDetail:userModel[] = [];
 
 
-  constructor(private router:Router , private cartService:CartService , private productService:ProductService){}
+  constructor(private router:Router , private cartService:CartService , private productService:ProductService , private http : HttpClient){}
 
   ngOnInit() {
     this.viewProduct()
@@ -72,11 +73,14 @@ export class CartComponent implements OnInit{
 
     })
   }
-  // calculatePrice(){
-  //     this.cartService.calculatePrice().subscribe(data=>{
-  //       data.forEach((t)=>{
-  //         this.totalPrice! = t.basePrice!
-  //       })
-  //     })
-  // }
+  orderBook(){
+    this.productService.bookOrder().subscribe((data)=>{
+            this.http.post<cart>("http://localhost:3000/order",data).subscribe(()=>{
+              alert('order Success')
+            })
+        let b = this.productDetails.indexOf(data)
+        this.productDetails.splice(b ,1);
+        this.http.delete<cart[]>("http://localhost:3000/cart" + '/' + data.id).subscribe()
+    })
+  }
 }

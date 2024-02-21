@@ -168,6 +168,13 @@ export class ProductService {
         })
         }
       }
+
+      bookOrder(){
+        return this.http.get<cart>(this.cartUrl)
+      }
+      getOrder(){
+        return this.http.get<cart>("http://localhost:3000/order")
+      }
 }
 
 

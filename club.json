@@ -68,5 +68,33 @@
       "id": 1
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "productName": "qrt",
+      "productDescription": "A professional web designer with a wealth of knowledge about the web Development and software",
+      "productString": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
+      "productPrice": 140,
+      "productQuantity": 1,
+      "favProduct": false,
+      "id": 2,
+      "userId": 2,
+      "productId": 2,
+      "basePrice": 140
+    },
+    {
+      "productName": "Krutik",
+      "productDescription": "Expert in all aspects of coding and knowledgeable about a wide range of coding languages",
+      "productString": "https://media.istockphoto.com/id/1201462385/vector/abstract-modern-speech-bubble-new-label.jpg?s=612x612&w=0&k=20&c=NkqNBBda-73QvqWCgi5RcifHNgLt7lb5HaDC4FbZ5sw=",
+      "productPrice": 160,
+      "productQuantity": 1,
+      "favProduct": false,
+      "id": 3,
+      "userId": 2,
+      "productId": 3,
+      "basePrice": 160
+    }
+  ],
+  "order": [
+   
+  ]
 }

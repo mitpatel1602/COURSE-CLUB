@@ -1,5 +1,4 @@
 
-import { OrderComponent } from './ADMIN/order/order.component';
 import { EditProfileComponent } from './PROFILE/edit-profile/edit-profile.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,6 +18,7 @@ import { AddproductComponent } from './ADMIN/addproduct/addproduct.component';
 import { EditAdminComponent } from './ADMIN/edit-admin/edit-admin.component';
 import { ProductEditComponent } from './ADMIN/product-edit/product-edit.component';
 import { ViewproductComponent } from './SHOP/viewproduct/viewproduct.component';
+import { OrderComponent } from './PROFILE/order/order.component';
 
 
 const routes: Routes = [
@@ -43,7 +43,7 @@ const routes: Routes = [
   children:[
     {path:'allproduct' , component:AllproductComponent},
     {path:'addproduct',component:AddproductComponent},
-    {path:'total order',component:OrderComponent},
+    {path:'totalorder',component:OrderComponent},
     {path:'editAdminProfile',component:EditAdminComponent},
     {path:'editProduct',component:ProductEditComponent},
   ]
